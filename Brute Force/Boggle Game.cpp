@@ -15,7 +15,7 @@ bool inRange(int y, int x){
 
 bool hasWord(int y, int x, const string& word){
     // 1. 범위를 벗어나는 경우
-    if (!inRange(y, x)) return false;
+    if (!inRange(y, x)) return false;ㅌㅌㅌㅌ
     // 2. 첫 글자가 일치하지 않는 경우.
     if (board[y][x] != word[0]) return false;
     // 3. 단어 길이가 1인 경우
