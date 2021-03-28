@@ -29,9 +29,10 @@ int main(){
                 continue;
 
             if(max < len(list[i].first, list[i].second, list[j].first,list[j].second)){
-                max = len(list[i].first, list[i].second, list[j].first,list[j].second); // 최대 거리.
+                max = len(list[i].first, list[i].second, list[j].first,list[j].second);
                 maxi = i;
             }
+
         }
         if (max < min){
             min = max;
