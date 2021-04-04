@@ -5,7 +5,7 @@ using namespace std;
 
 int N,M;
 int company[21][301];
-int dp[21][301];
+int dp[21][301]
 int path[21][301];
 
 int main(){
