@@ -22,17 +22,17 @@ int main(){
         costs[i] = c;
         sum += c;
     }
-   for(int i = 0; i<N; i++){
-       for(int j = sum; j >= costs[i]; j--){
-           arr[j] = max(arr[j], arr[j-costs[i]] + bytes[i]);
-       }
-   }
+    for(int i = 0; i<N; i++){
+        for(int j = sum; j >= costs[i]; j--){
+            arr[j] = max(arr[j], arr[j-costs[i]] + bytes[i]);
+        }
+    }
 
-   for (int i = 0; i<sum; i++)
-       if(arr[i] >= M) {
-           cout << i << '\n';
-           return 0;
-       }
-   cout << sum << '\n';
-   return 0;
+    for (int i = 0; i<sum; i++)
+        if(arr[i] >= M) {
+            cout << i << '\n';
+            return 0;
+        }
+    cout << sum << '\n';
+    return 0;
 }
