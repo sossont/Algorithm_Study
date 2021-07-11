@@ -21,18 +21,15 @@ int main(){
 
     li sum = 0;
     while(end <= N){
-        int flag = 0;
         if(sum < S){
             if(end == N)    // 더 이상 더할 수가 없는걸~
                 break;
             sum += arr[end];
             end++;
-            flag = 0;
         }
         else{
             sum -= arr[start];
             start++;
-            flag = 1;
         }
 
         if(sum >= S){
