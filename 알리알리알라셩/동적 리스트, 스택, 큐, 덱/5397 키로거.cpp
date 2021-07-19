@@ -29,7 +29,7 @@ int main(){
             else if(judge == '-'){
                 if(cursor == arr.begin())
                     continue;
-                cursor = arr.erase(--cursor);
+                cursor = arr.erase(--cu ㅈrsor);
             }
             else{
                 arr.insert(cursor, judge);
