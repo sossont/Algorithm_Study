@@ -6,6 +6,9 @@ string str;
 int strindex;
 ll sum[10000][4];   // 길이가 10000이고, 입력받을수 있는 문자가 4개니까.
 
+// ****** 공식화를 해보자!
+
+
 int checkchar(char chr){
     if (chr == 'L')
         return 0;
@@ -35,6 +38,7 @@ ll search(ll value, int idx){
     ll &ret = sum[idx][chridx];
     if (ret != -1)  // 메모지에이션.
         return ret;
+
 
     switch (chridx) {
         case 0:
