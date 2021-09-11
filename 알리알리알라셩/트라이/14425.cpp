@@ -4,9 +4,8 @@
 #include <algorithm>
 using namespace std;
 
-const int ALPHABETS = 11;
-int char_to_index(char ch) { return ch - '0';}
-char num[10010][11];
+const int ALPHABETS = 26;
+int char_to_index(char ch) { return ch - 'a';}
 
 struct Trie{
 
@@ -29,7 +28,6 @@ struct Trie{
     void insert(const char * key){
         if(*key == '\0'){
             is_terminal = true;
-            return;
         }
         else{
             int index = char_to_index(*key);
@@ -54,50 +52,37 @@ struct Trie{
     }
 
     bool string_exist(const char * key){
-        if(*key == 0){
+        if(*key == 0 && is_terminal){
             return true;
         }
 
-        if(is_terminal)
-            return false;
-
         int index = char_to_index(*key);
         if(children[index] == 0){
-            return true;
+            return false;
         }
         return children[index]->string_exist(key + 1);
     }
 
 };
-
 int main(){
-    int t;
-    cin >> t;
-    while(t--){
-        Trie *root = new Trie();
-        int n;
-        cin >> n;
-        bool flag = true;
-        for (int i = 0; i<n; i++) {
-            cin >> num[i];
-            root->insert(num[i]);
-        }
-
-        for(int i = 0; i<n; i++){
-            if(root->string_exist(num[i]) == false){
-                flag = false;
-                cout << "NO\n";
-                break;
-            }
-        }
-
-        if(flag)
-        {
-            cout << "YES\n";
-        }
-
-        delete root;
+    int N, M;
+    cin >> N >> M;
+    Trie *root = new Trie();
+    for(int i = 0; i<N; i++){
+        char str[505];
+        scanf("%s", str);
+        root->insert(str);
     }
 
+    int answer = 0;
+    for(int i = 0; i<M; i++){
+        char input[505];
+        scanf("%s", input);
+        if(root->string_exist(input) != 0)
+            answer++;
+    }
+
+    delete root;
+    cout << answer;
     return 0;
 }

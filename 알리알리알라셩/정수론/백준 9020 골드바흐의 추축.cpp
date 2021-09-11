@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cmath>
 #include <string.h>
+
+// A,B범위가 너무 크다. 이걸 어떻게 해야하지?
 using namespace std;
 
 int main() {
